@@ -1,4 +1,6 @@
-/*
+(function (exports) {
+  'use strict';
+  /*
  * jcobyla
  * 
  * The MIT License
@@ -121,7 +123,7 @@ function FindMinimum(calcfc, n,  m, x, rhobeg, rhoend,  iprint,  maxfun, fmaxite
         //     the objective and constraint functions at X in F and CON(1),CON(2),
         //     ...,CON(M).  Note that we are trying to adjust X so that F(X) is as
         //     small as possible subject to the constraint functions being nonnegative.
-        pleaseStop = false;
+
         // Local variables
         var mpp = m + 2;
         // Internal base-1 X array
@@ -1291,3 +1293,7 @@ function FindMinimum(calcfc, n,  m, x, rhobeg, rhoend,  iprint,  maxfun, fmaxite
         return sum;
     }
 
+
+  exports.FindMinimum = FindMinimum;
+
+}(typeof exports === 'undefined' ? window : exports));
